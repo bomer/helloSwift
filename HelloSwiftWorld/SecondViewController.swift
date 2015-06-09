@@ -20,7 +20,6 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
         indicator.hidden=true
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,14 +29,14 @@ class SecondViewController: UIViewController {
     
     @IBAction func GotoThirdView(sender: AnyObject) {
         indicator.hidden=false
-        
         dispatch_async(dispatch_get_main_queue()) {
             self.loadThirdScreen()
         }
         
     }
     func getJSON(urlToRequest: String) -> NSData{
-//        var stringversions = String(contentsOfURL: NSURL(string: urlToRequest)!)
+        //String versions, but we want the data version
+        //var stringversions = String(contentsOfURL: NSURL(string: urlToRequest)!)
         var data = NSData(contentsOfURL: NSURL(string: urlToRequest)!)
         return data!
     }
