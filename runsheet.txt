@@ -1,0 +1,52 @@
+Swift Tutorial + Code Walkthrough
+
+1)Create blank project
+2)Walkthrough of the Project Layout 
+	- App Delegate (App Entry point re-usable and acessible from view controllers)
+	- View controllers (The C in MVC, where variables are set)
+	- Storyboard 
+3)Create a hello world
+	-Put on screen + Run
+	-Center with a constraint
+	-Wire up to allow programatically change value
+4)Set variable to a string
+	-Explain Let/Var (let is constant)
+	- Create a constant "Hello There"
+	    let helloMessage = "Hello there!"
+    - Show what happens if you try to set it again,
+    - Create var welcome message
+		var welcomeMessage: String? ;
+	- Show it errors without ? mark, but works with the following
+		var welcomeMessage: String = "" ;
+	-Set the helloWorld Label to the constant
+5)Create  a button
+	-Wire button up to IBAction
+	-Set it to hard coded string
+6)Create an array
+	-Show Init on class    
+		var ids: [Int]=[1,2,3,4]
+    	var listOfNames: [String] = []
+	-add to with
+		listOfNames.append("James")
+	-Set to random number with
+		var randomPos=Int(arc4random_uniform(UInt32(listOfNames.count)))
+        helloLabel.text="Hello " + listOfNames[randomPos]
+7)Create a segue
+	-Create new VC
+	-Create segue from button
+	-Wrap in navigation controler using interface
+	-Create segue to a third controller and segue using code call
+		self.performSegueWithIdentifier("showthird", sender:self)
+	-Create class for new VCs
+8)Download a thing
+	-Download it on button press, download and save to Delegate
+	-Download using 
+		var data = NSData(contentsOfURL: NSURL(string: urlToRequest)!)
+9)Display string from json results
+	-Show on Third page loading from delegate
+	-Loop through to build
+		for name: String in appDel.downloadedNames{
+            outputString += name +  ", "
+        }
+    -Update label with outputString
+10)GO HOME
